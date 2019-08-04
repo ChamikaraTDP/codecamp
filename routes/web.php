@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/',
+    function () {
+        return view('welcome');
+    }
+);
 
 Auth::routes();
 
-Route::get('/profile/{user}', 'profilesController@index')->name('profile.show');
+Route::get('/p/create', 'PostController@create');
+
+Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
