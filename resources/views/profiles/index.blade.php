@@ -4,16 +4,28 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="/images/me1.jpg"  class="w-100 rounded-circle"/>
+            <img src="{{ $user->profile->profileImage() }}"  class="w-100 rounded-circle"/>
         </div>
         <div class="col-9 pt-5">
+            <div class="d-flex align-items-center pb-3">
+
+                <div class="h3 pr-4">{{ $user->username }}</div>
+
+                <follow-button></follow-button>
+
+            </div>
+
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->username }}</h1>
-                <a href="{{ route('p.create') }}">Add New Post</a>
+                @can('update', $user->profile)
+                    <div>
+                        <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+                    </div>
+                    <div>
+                            <a href="{{ route('p.create') }}">Add New Post</a>
+                    </div>
+                @endcan
             </div>
-            <div>
-                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
-            </div>
+
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
                 <div class="pr-5"><strong>23K</strong> followers</div>

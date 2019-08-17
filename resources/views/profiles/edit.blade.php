@@ -26,7 +26,7 @@
                             value="{{ old('title') ?? $user->profile->title }}"
                             autocomplete="title" autofocus>
 
-                    @error('caption')
+                    @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -43,7 +43,7 @@
                             value="{{ old('description') ?? $user->profile->description }}"
                             autocomplete="description" autofocus>
 
-                    @error('caption')
+                    @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -60,7 +60,7 @@
                             value="{{ old('url') ?? $user->profile->url }}"
                             autocomplete="url" autofocus>
 
-                    @error('caption')
+                    @error('url')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
