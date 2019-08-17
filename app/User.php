@@ -78,5 +78,15 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    /**
+     * Relation: user to profiles.
+     *
+     * @return Illuminate\Foundation\Auth\User
+     */
+    public function following()
+    {
+        return $this->belongsToMany(Profile::class);
+    }
+
 
 }
