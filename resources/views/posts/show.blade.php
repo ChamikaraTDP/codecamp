@@ -14,7 +14,7 @@
                <div>
                    <div class="font-weight-bold">
                         <a href="/profile/{{ $post->user->id }}">
-                            <span class="text-dark">{{$post->user->username }}</span>
+                            <span class="text-dark">{{ $post->user->username }}</span>
                         </a>
                         <a href="#" class='pl-3'>Follow</a>
                     </div>
@@ -29,6 +29,9 @@
                     <span class="text-dark">{{$post->user->username }}</span>
                 </a>
             </span> {{ $post->caption }}</p>
+            <form action="/p/{{ $post->id }}/delete">
+                <button class="btn btn-primary" type="submit">Delete</button>
+            </form>
         </div>
     </div>
 </div>

@@ -26,6 +26,7 @@ Route::get('/', 'PostController@index');
 Route::get('/p/create', 'PostController@create')->name('p.create');
 Route::post('/p', 'PostController@store')->name('p.store');
 Route::get('/p/{post}', 'PostController@show')->name('p.show');
+Route::get('/p/{post}/delete', 'PostController@delete')->name('p.delete');
 
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');

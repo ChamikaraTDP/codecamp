@@ -51,8 +51,15 @@ class PostController extends Controller
         return redirect('/profile/'.auth()->user()->id);
     }
 
-    public function show(\App\Post $post)
+    public function show(Post $post)
     {
         return view('posts/show',  compact('post'));
+    }
+
+    public function delete(Post $post)
+    {
+        $id = $post->user->id;
+        $post->delete();
+        return redirect('/profile/'.$id);
     }
 }
